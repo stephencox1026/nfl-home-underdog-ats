@@ -366,8 +366,13 @@ class ExecutiveNFLGUI:
         self.expand_buttons[int(season_data['season'].iloc[0])] = expand_btn
         
         # Modern stats grid with minimized spacing
+        # Consistent vertical positioning to match 2022 season reference
         stats_container = tk.Frame(parent, bg=self.colors['card_bg'])
         stats_container.pack(fill=tk.X, pady=(0, 0))
+        
+        # Left side - Main stats
+        left_stats = tk.Frame(stats_container, bg=self.colors['card_bg'])
+        left_stats.pack(side=tk.LEFT)
         
         # Create stat cards with conditional formatting for win rate and status
         # Win rate: >50% green, <50% red
@@ -379,21 +384,121 @@ class ExecutiveNFLGUI:
             ("Total Games", str(total_games), self.colors['text']),
             ("ATS Record", f"{int(covers)}-{int(losses)}" + (f"-{int(pushes)}" if pushes > 0 else ""), 
              self.colors['text']),
-            ("Win Rate", f"{win_rate:.2f}%", win_rate_color),
-            ("Status", "Profitable" if is_profitable else "Not Profitable", status_color)
+            ("Win Rate", f"{win_rate:.1f}%", win_rate_color),
+            ("Status", "Profitable         " if is_profitable else "Not Profitable", status_color)
         ]
         
         for i, (label, value, color) in enumerate(stats):
+            # Increase spacing for Status card to move it right
             padx_right = 48 if i < len(stats) - 1 else 0
-            self.create_stat_card(stats_container, label, value, color, 
-                                side=tk.LEFT, padx=(0, padx_right))
+            # Add extra padding before Status card to move it right
+            padx_left = 24 if i == len(stats) - 1 else 0
+            self.create_stat_card(left_stats, label, value, color, 
+                                side=tk.LEFT, padx=(padx_left, padx_right))
+        
+        # Middle - Division records (starting after Status, ending before View Games)
+        division_records = self.calculate_division_ats_records(season_data)
+        if division_records:
+            # Create division records container in the middle, aligned vertically with Status
+            # Use consistent vertical alignment across all seasons (matching 2022 season reference)
+            # Add more left padding to move divisional records to the right
+            division_container = tk.Frame(stats_container, bg=self.colors['card_bg'])
+            division_container.pack(side=tk.LEFT, padx=(72, 0), fill=tk.X, expand=True)
+            
+            # Store reference season (2022) for vertical alignment
+            reference_season = 2022
+            current_season = int(season_data['season'].iloc[0])
+            
+            # Division order: AFC East, AFC North, AFC South, AFC West, NFC East, NFC North, NFC South, NFC West
+            division_order = [
+                'AFC East', 'AFC North', 'AFC South', 'AFC West',
+                'NFC East', 'NFC North', 'NFC South', 'NFC West'
+            ]
+            
+            # Display division records in a row
+            for i, division in enumerate(division_order):
+                if division in division_records:
+                    record = division_records[division]
+                    record_text = f"{record['covers']}-{record['losses']}"
+                    if record['pushes'] > 0:
+                        record_text += f"-{record['pushes']}"
+                    
+                    # Calculate win rate for conditional formatting
+                    total_games = record['covers'] + record['losses']
+                    if total_games > 0:
+                        div_win_rate = (record['covers'] / total_games * 100)
+                        record_color = self.colors['success'] if div_win_rate > 50 else self.colors['failure']
+                    else:
+                        record_color = self.colors['text']
+                    
+                    # Create division record card
+                    div_frame = tk.Frame(division_container, bg=self.colors['card_bg'])
+                    # AFC East aligned to left, others get spacing
+                    if i == 0:
+                        div_frame.pack(side=tk.LEFT, padx=(0, 20), anchor=tk.W)
+                    else:
+                        div_frame.pack(side=tk.LEFT, padx=(0, 20))
+                    
+                    # Division name (with AFC/NFC prefix, larger font, darker color)
+                    # Consistent vertical positioning to match 2022 season reference
+                    div_label = tk.Label(
+                        div_frame,
+                        text=division,
+                        font=(self.fonts['stat_label'][0], self.fonts['stat_label'][1] + 3, 'normal'),
+                        fg='#333333',  # Darker color instead of text_secondary
+                        bg=self.colors['card_bg']
+                    )
+                    div_label.pack(anchor=tk.CENTER, pady=(0, 0))
+                    
+                    # Record (larger font with conditional formatting)
+                    # Align vertically to match Status value position (consistent across all seasons)
+                    record_label = tk.Label(
+                        div_frame,
+                        text=record_text,
+                        font=(self.fonts['stat_value'][0], self.fonts['stat_value'][1] - 2, 'normal'),
+                        fg=record_color,
+                        bg=self.colors['card_bg']
+                    )
+                    # Use consistent padding to align with Status value across all seasons
+                    record_label.pack(anchor=tk.CENTER, pady=(0, 0))
+        
+    
+    def calculate_division_ats_records(self, season_data):
+        """Calculate ATS records by division for the season."""
+        import utils
+        
+        division_records = {}
+        
+        for idx, row in season_data.iterrows():
+            # Get division from home team
+            home_team = row.get('home_team_normalized', '')
+            division = utils.get_division(home_team)
+            
+            if not division:
+                continue
+            
+            if division not in division_records:
+                division_records[division] = {'covers': 0, 'losses': 0, 'pushes': 0}
+            
+            # Check if home team covered
+            home_covered = bool(row.get('home_covered', False)) if pd.notna(row.get('home_covered', False)) else False
+            ats_result = str(row.get('ats_result', ''))
+            
+            if home_covered:
+                division_records[division]['covers'] += 1
+            elif ats_result == 'Push':
+                division_records[division]['pushes'] += 1
+            else:
+                division_records[division]['losses'] += 1
+        
+        return division_records
     
     def create_stat_card(self, parent, label, value, color, side=tk.LEFT, padx=0):
         """Create modern stat card with better visual hierarchy."""
         card_frame = tk.Frame(parent, bg=self.colors['card_bg'])
         card_frame.pack(side=side, padx=padx)
         
-        # Value (large, prominent)
+        # Value (large, prominent) - consistent positioning for vertical alignment
         value_label = tk.Label(
             card_frame,
             text=value,
@@ -401,9 +506,9 @@ class ExecutiveNFLGUI:
             fg=color,
             bg=self.colors['card_bg']
         )
-        value_label.pack(anchor=tk.W)
+        value_label.pack(anchor=tk.W, pady=(0, 0))
         
-        # Label (small, subtle)
+        # Label (small, subtle) - consistent positioning to match division name alignment
         label_label = tk.Label(
             card_frame,
             text=label.upper(),
