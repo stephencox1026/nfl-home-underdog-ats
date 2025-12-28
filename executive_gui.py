@@ -9,6 +9,7 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime
 import sys
+import os
 try:
     from PIL import ImageGrab
     HAS_PIL = True
@@ -79,6 +80,9 @@ class ExecutiveNFLGUI:
         # Create GUI
         self.create_widgets()
         
+        # Auto-export image after GUI is fully loaded
+        self.root.after(2000, self.auto_export_image)  # Wait 2 seconds for rendering
+        
         # Display all seasons
         if self.games_df is not None and len(self.games_df) > 0:
             self.display_all_seasons()
@@ -108,14 +112,14 @@ class ExecutiveNFLGUI:
     def create_widgets(self):
         """Create the GUI widgets with modern layout."""
         # Main container with modern spacing
-        main_container = tk.Frame(self.root, bg=self.colors['bg'])
-        main_container.pack(fill=tk.BOTH, expand=True, padx=0, pady=0)
+        self.main_container = tk.Frame(self.root, bg=self.colors['bg'])
+        self.main_container.pack(fill=tk.BOTH, expand=True, padx=0, pady=0)
         
         # Top bar with title and export
-        self.create_top_bar(main_container)
+        self.create_top_bar(self.main_container)
         
         # Create scrollable content area
-        self.create_scrollable_view(main_container)
+        self.create_scrollable_view(self.main_container)
     
     def create_top_bar(self, parent):
         """Create top bar with title and actions - no box, matches background."""
@@ -240,6 +244,44 @@ class ExecutiveNFLGUI:
         # Main season container with reduced spacing
         season_container = tk.Frame(parent, bg=self.colors['bg'])
         season_container.pack(fill=tk.X, pady=(0, 16), padx=48)  # Reduced from 24 to 16
+        
+        # Add ad box for 2024 season
+        if season == 2024:
+            ad_frame = tk.Frame(season_container, bg=self.colors['card_bg'], 
+                               relief=tk.SOLID, bd=1,
+                               highlightbackground=self.colors['card_border'],
+                               highlightthickness=1)
+            ad_frame.pack(fill=tk.X, pady=(0, 16))
+            
+            # Title - centered and larger
+            ad_title = "🎬 Coming 2026: The Richard Sondgroth Story 🎬"
+            title_label = tk.Label(
+                ad_frame,
+                text=ad_title,
+                font=(self.fonts['subtitle'][0], self.fonts['subtitle'][1] + 9, 'bold'),
+                fg=self.colors['text'],
+                bg=self.colors['card_bg'],
+                justify=tk.CENTER
+            )
+            title_label.pack(padx=20, pady=(12, 8), anchor=tk.CENTER)
+            
+            # Body text - larger and left-aligned
+            ad_body = "A good-hearted Texan who's got two passions: the perfect pair of kicks and the best BBQ in the Lone Star State. " \
+                      "When he's not hunting down rare sneakers or perfecting his brisket, he's just being an all-around great guy. " \
+                      "But behind the scenes, there's a complicated love story unfolding with a man who keeps him on his toes - " \
+                      "a relationship full of passion, late-night conversations, and the kind of drama that makes life interesting. " \
+                      "This one's for you, Richard! 🤠👟🍖💕"
+            
+            body_label = tk.Label(
+                ad_frame,
+                text=ad_body,
+                font=(self.fonts['subtitle'][0], self.fonts['subtitle'][1] + 5, 'normal'),
+                fg=self.colors['text'],
+                bg=self.colors['card_bg'],
+                justify=tk.LEFT,
+                wraplength=1400  # Increased to stretch across whole box
+            )
+            body_label.pack(padx=20, pady=(0, 12), fill=tk.X, anchor=tk.W)
         
         # Light grey card with thin black outline
         summary_frame = tk.Frame(season_container, bg=self.colors['card_bg'], 
@@ -602,50 +644,75 @@ class ExecutiveNFLGUI:
         tree.tag_configure('loss', foreground=self.colors['failure'])  # Dark red for losses
         tree.tag_configure('push', foreground=self.colors['neutral'])  # Grey for pushes
     
-    def export_as_image(self):
-        """Export the GUI window as an image."""
+    def auto_export_image(self):
+        """Automatically export the GUI window as an image to Documents folder."""
+        self.export_as_image(silent=True)
+    
+    def export_as_image(self, silent=False):
+        """Export the GUI window as an image to Documents folder."""
         if not HAS_PIL:
-            messagebox.showerror("Export Error", 
-                "PIL/Pillow or pyscreenshot is required for image export.\n"
-                "Install with: pip install pillow")
+            if not silent:
+                messagebox.showerror("Export Error", 
+                    "PIL/Pillow or pyscreenshot is required for image export.\n"
+                    "Install with: pip install pillow")
             return
         
         try:
-            # Ask user for save location
-            filename = filedialog.asksaveasfilename(
-                defaultextension=".png",
-                filetypes=[
-                    ("PNG files", "*.png"),
-                    ("JPEG files", "*.jpg"),
-                    ("All files", "*.*")
-                ],
-                initialfile=f"nfl_ats_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-            )
+            # Get Documents folder path
+            if sys.platform == 'darwin':  # macOS
+                documents_path = Path.home() / "Documents"
+            elif sys.platform == 'win32':  # Windows
+                documents_path = Path(os.path.expanduser("~/Documents"))
+            else:  # Linux
+                documents_path = Path.home() / "Documents"
             
-            if not filename:
-                return  # User cancelled
+            # Create Documents folder if it doesn't exist
+            documents_path.mkdir(parents=True, exist_ok=True)
             
-            # Update the window to ensure everything is rendered
+            # Set filename
+            filename = documents_path / "NFL Home Dog Analysis.png"
+            
+            # Bring window to front and ensure it's fully rendered
+            self.root.lift()
+            self.root.attributes('-topmost', True)
             self.root.update_idletasks()
+            self.root.update()
             
-            # Get window position and size
-            x = self.root.winfo_x()
-            y = self.root.winfo_y()
-            width = self.root.winfo_width()
-            height = self.root.winfo_height()
+            # Wait for rendering
+            import time
+            time.sleep(0.5)
             
-            # Capture the window
+            # Get the main container widget position and size (content area only)
+            self.root.update_idletasks()
+            self.main_container.update_idletasks()
+            
+            # Get screen coordinates of the main container
+            x = self.main_container.winfo_rootx()
+            y = self.main_container.winfo_rooty()
+            width = self.main_container.winfo_width()
+            height = self.main_container.winfo_height()
+            
+            # Capture the content area
             img = ImageGrab.grab(bbox=(x, y, x + width, y + height))
             
-            # Save the image
-            img.save(filename)
+            # Reset window attributes
+            self.root.attributes('-topmost', False)
             
-            messagebox.showinfo("Export Successful", 
-                f"Image saved successfully to:\n{filename}")
+            # Save the image
+            img.save(str(filename))
+            
+            if not silent:
+                messagebox.showinfo("Export Successful", 
+                    f"Image saved successfully to:\n{filename}")
+            else:
+                print(f"Image auto-saved to: {filename}")
             
         except Exception as e:
-            messagebox.showerror("Export Error", 
-                f"Failed to export image:\n{str(e)}")
+            if not silent:
+                messagebox.showerror("Export Error", 
+                    f"Failed to export image:\n{str(e)}")
+            else:
+                print(f"Auto-export error: {str(e)}")
 
 
 def main():
