@@ -14,9 +14,9 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2014-12-07,2014,14,12,Jacksonville Jaguars,Houston Texans,13.0,27.0,6.5,Loss,False,61.0,15.0,outdoors,,,,,True,True,2.0,10.0,6.0,6.0
 2014-12-14,2014,15,12,San Diego Chargers,Denver Broncos,10.0,22.0,4.0,Loss,False,64.0,6.0,outdoors,,,,,False,False,8.0,5.0,10.0,3.0
 2014-12-20,2014,16,12,Washington Commanders,Philadelphia Eagles,27.0,24.0,7.0,Cover,True,37.0,0.0,outdoors,,,,,False,False,3.0,11.0,9.0,5.0
+2014-12-21,2014,16,12,Arizona Cardinals,Seattle Seahawks,6.0,35.0,9.5,Loss,False,,,closed,,,,,False,False,11.0,3.0,10.0,4.0
 2014-12-21,2014,16,12,Chicago Bears,Detroit Lions,14.0,20.0,10.0,Cover,True,36.0,13.0,outdoors,,,,,False,False,5.0,9.0,10.0,4.0
 2014-12-21,2014,16,12,New York Jets,New England Patriots,16.0,17.0,10.0,Cover,True,34.0,9.0,outdoors,,,,,False,False,3.0,11.0,11.0,3.0
-2014-12-21,2014,16,12,Arizona Cardinals,Seattle Seahawks,6.0,35.0,9.5,Loss,False,,,closed,,,,,False,False,11.0,3.0,10.0,4.0
 2014-12-28,2014,17,12,Tampa Bay Buccaneers,New Orleans Saints,20.0,23.0,6.0,Cover,True,79.0,6.0,outdoors,,,,,False,False,2.0,13.0,6.0,9.0
 2014-12-28,2014,17,12,Tennessee Titans,Indianapolis Colts,10.0,27.0,7.5,Loss,False,40.0,6.0,outdoors,,,,,False,False,2.0,13.0,10.0,5.0
 2014-12-28,2014,17,12,Washington Commanders,Dallas Cowboys,17.0,44.0,6.0,Loss,False,58.0,0.0,outdoors,,,,,False,False,4.0,11.0,11.0,4.0
@@ -25,13 +25,13 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2015-10-11,2015,5,10,Oakland Raiders,Denver Broncos,10.0,16.0,5.0,Loss,False,72.0,10.0,outdoors,,,,,False,False,5.0,15.0,16.0,5.0
 2015-10-22,2015,7,10,San Francisco 49ers,Seattle Seahawks,3.0,20.0,6.5,Loss,False,75.0,8.0,outdoors,,,,,False,False,10.0,12.0,16.0,9.0
 2015-11-29,2015,12,11,San Francisco 49ers,Arizona Cardinals,13.0,19.0,7.5,Cover,True,54.0,4.0,outdoors,,,,,False,False,11.0,15.0,19.0,8.0
-2015-12-06,2015,13,12,San Diego Chargers,Denver Broncos,3.0,17.0,6.0,Loss,False,78.0,4.0,outdoors,,,,,False,False,12.0,15.0,21.0,7.0
 2015-12-06,2015,13,12,New Orleans Saints,Carolina Panthers,38.0,41.0,5.5,Cover,True,,,dome,,,,,False,False,11.0,16.0,19.0,9.0
 2015-12-06,2015,13,12,Cleveland Browns,Cincinnati Bengals,3.0,37.0,7.5,Loss,False,45.0,12.0,outdoors,,,,,False,False,9.0,18.0,19.0,8.0
 2015-12-06,2015,13,12,St. Louis Rams,Arizona Cardinals,3.0,27.0,3.5,Loss,False,,,dome,,,,,False,False,10.0,17.0,20.0,8.0
+2015-12-06,2015,13,12,San Diego Chargers,Denver Broncos,3.0,17.0,6.0,Loss,False,78.0,4.0,outdoors,,,,,False,False,12.0,15.0,21.0,7.0
+2015-12-27,2015,16,12,Tennessee Titans,Houston Texans,6.0,34.0,3.5,Loss,False,73.0,15.0,outdoors,,,,,False,False,5.0,25.0,16.0,14.0
 2015-12-27,2015,16,12,Atlanta Falcons,Carolina Panthers,20.0,13.0,7.0,Cover,True,,,dome,,,,,False,False,13.0,17.0,22.0,9.0
 2015-12-27,2015,16,12,Baltimore Ravens,Pittsburgh Steelers,20.0,17.0,11.0,Cover,True,64.0,9.0,outdoors,,,,,False,False,15.0,17.0,20.0,11.0
-2015-12-27,2015,16,12,Tennessee Titans,Houston Texans,6.0,34.0,3.5,Loss,False,73.0,15.0,outdoors,,,,,False,False,5.0,25.0,16.0,14.0
 2016-01-03,2015,17,1,Cleveland Browns,Pittsburgh Steelers,12.0,28.0,13.0,Loss,False,34.0,18.0,outdoors,,,,,False,False,10.0,21.0,20.0,12.0
 2016-01-03,2015,17,1,Miami Dolphins,New England Patriots,20.0,10.0,10.0,Cover,True,80.0,7.0,outdoors,,,,,False,False,13.0,18.0,27.0,7.0
 2016-09-18,2016,2,9,Cleveland Browns,Baltimore Ravens,20.0,25.0,4.0,Loss,False,74.0,7.0,outdoors,,,,,False,False,10.0,23.0,17.0,18.0
@@ -43,8 +43,8 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2016-11-06,2016,9,11,Baltimore Ravens,Pittsburgh Steelers,21.0,14.0,3.5,Cover,True,65.0,15.0,outdoors,,,,,False,False,19.0,22.0,26.0,16.0
 2016-11-20,2016,11,11,Cleveland Browns,Pittsburgh Steelers,9.0,24.0,8.0,Loss,False,36.0,27.0,outdoors,,,,,False,False,10.0,32.0,26.0,18.0
 2016-11-27,2016,12,11,New York Jets,New England Patriots,17.0,22.0,9.0,Cover,True,47.0,10.0,outdoors,,,,,False,False,17.0,25.0,36.0,11.0
-2016-12-11,2016,14,12,Cleveland Browns,Cincinnati Bengals,10.0,23.0,4.0,Loss,False,28.0,15.0,outdoors,,,,,False,False,10.0,34.0,26.0,18.0
 2016-12-11,2016,14,12,New York Giants,Dallas Cowboys,10.0,7.0,3.5,Cover,True,32.0,0.0,outdoors,,,,,False,False,20.0,24.0,28.0,18.0
+2016-12-11,2016,14,12,Cleveland Browns,Cincinnati Bengals,10.0,23.0,4.0,Loss,False,28.0,15.0,outdoors,,,,,False,False,10.0,34.0,26.0,18.0
 2016-12-18,2016,15,12,Chicago Bears,Green Bay Packers,27.0,30.0,4.5,Cover,True,11.0,12.0,outdoors,,,,,False,False,14.0,31.0,31.0,18.0
 2016-12-24,2016,16,12,Jacksonville Jaguars,Tennessee Titans,38.0,17.0,4.0,Cover,True,67.0,5.0,outdoors,,,,,False,False,10.0,36.0,13.0,33.0
 2017-01-01,2016,17,1,Miami Dolphins,New England Patriots,14.0,35.0,7.5,Loss,False,80.0,15.0,outdoors,,,,,False,False,24.0,23.0,41.0,11.0
@@ -61,8 +61,8 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2017-11-09,2017,10,11,Arizona Cardinals,Seattle Seahawks,16.0,22.0,6.0,Push,False,,,open,,,,,False,False,36.0,22.0,41.0,21.0
 2017-11-19,2017,11,11,Dallas Cowboys,Philadelphia Eagles,9.0,37.0,6.0,Loss,False,,,closed,,,,,False,False,35.0,25.0,32.0,25.0
 2017-11-26,2017,12,11,San Francisco 49ers,Seattle Seahawks,13.0,24.0,7.0,Loss,False,66.0,12.0,outdoors,,,,,False,False,16.0,42.0,42.0,22.0
-2017-12-03,2017,13,12,Buffalo Bills,New England Patriots,3.0,23.0,7.5,Loss,False,48.0,13.0,outdoors,,,,,False,False,30.0,29.0,54.0,13.0
 2017-12-03,2017,13,12,Arizona Cardinals,Los Angeles Rams,16.0,32.0,7.5,Loss,False,,,closed,,,,,False,False,37.0,24.0,12.0,15.0
+2017-12-03,2017,13,12,Buffalo Bills,New England Patriots,3.0,23.0,7.5,Loss,False,48.0,13.0,outdoors,,,,,False,False,30.0,29.0,54.0,13.0
 2017-12-04,2017,13,12,Cincinnati Bengals,Pittsburgh Steelers,20.0,23.0,4.5,Cover,True,61.0,9.0,outdoors,,,,,False,False,33.0,26.0,44.0,21.0
 2017-12-10,2017,14,12,New York Giants,Dallas Cowboys,10.0,30.0,4.0,Loss,False,39.0,11.0,outdoors,,,,,False,False,25.0,36.0,36.0,27.0
 2017-12-11,2017,14,12,Miami Dolphins,New England Patriots,27.0,20.0,10.0,Cover,True,55.0,7.0,outdoors,,,,,False,False,29.0,32.0,55.0,13.0
@@ -70,10 +70,10 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2017-12-17,2017,15,12,New York Giants,Philadelphia Eagles,29.0,34.0,7.5,Cover,True,35.0,0.0,outdoors,,,,,False,False,25.0,37.0,35.0,26.0
 2017-12-18,2017,15,12,Tampa Bay Buccaneers,Atlanta Falcons,21.0,24.0,7.0,Cover,True,71.0,2.0,outdoors,,,,,False,False,21.0,40.0,35.0,29.0
 2017-12-23,2017,16,12,Green Bay Packers,Minnesota Vikings,0.0,16.0,8.5,Loss,False,10.0,6.0,outdoors,,,,,False,False,43.0,26.0,37.0,26.0
-2017-12-31,2017,17,12,Los Angeles Rams,San Francisco 49ers,13.0,34.0,6.5,Loss,False,67.0,3.0,outdoors,,,,,False,False,15.0,16.0,20.0,43.0
-2017-12-31,2017,17,12,Tampa Bay Buccaneers,New Orleans Saints,31.0,24.0,6.0,Cover,True,71.0,3.0,outdoors,,,,,False,False,21.0,42.0,32.0,31.0
 2017-12-31,2017,17,12,New York Giants,Washington Commanders,18.0,10.0,5.0,Cover,True,16.0,16.0,outdoors,,,,,False,False,25.0,39.0,28.0,35.0
 2017-12-31,2017,17,12,Philadelphia Eagles,Dallas Cowboys,0.0,6.0,3.5,Loss,False,19.0,17.0,outdoors,,,,,False,False,37.0,26.0,38.0,28.0
+2017-12-31,2017,17,12,Los Angeles Rams,San Francisco 49ers,13.0,34.0,6.5,Loss,False,67.0,3.0,outdoors,,,,,False,False,15.0,16.0,20.0,43.0
+2017-12-31,2017,17,12,Tampa Bay Buccaneers,New Orleans Saints,31.0,24.0,6.0,Cover,True,71.0,3.0,outdoors,,,,,False,False,21.0,42.0,32.0,31.0
 2018-09-09,2018,1,9,Cleveland Browns,Pittsburgh Steelers,21.0,21.0,3.5,Cover,True,58.0,11.0,outdoors,,,,,False,False,11.0,53.0,48.0,23.0
 2018-09-16,2018,2,9,Tennessee Titans,Houston Texans,20.0,17.0,3.5,Cover,True,81.0,12.0,outdoors,,,,,False,False,24.0,43.0,32.0,36.0
 2018-09-30,2018,4,9,Arizona Cardinals,Seattle Seahawks,17.0,20.0,3.5,Cover,True,,,closed,,,,,False,False,40.0,29.0,46.0,27.0
@@ -92,9 +92,9 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2018-12-17,2018,15,12,Carolina Panthers,New Orleans Saints,9.0,12.0,6.0,Cover,True,48.0,3.0,outdoors,,,,,False,False,48.0,34.0,44.0,35.0
 2018-12-23,2018,16,12,Detroit Lions,Minnesota Vikings,9.0,27.0,6.5,Loss,False,,,dome,,,,,False,False,41.0,39.0,47.0,33.0
 2018-12-23,2018,16,12,Arizona Cardinals,Los Angeles Rams,9.0,31.0,14.5,Loss,False,,,closed,,,,,False,False,43.0,37.0,26.0,21.0
+2018-12-30,2018,17,12,Tennessee Titans,Indianapolis Colts,17.0,33.0,5.0,Loss,False,53.0,4.0,outdoors,,,,,False,False,33.0,48.0,42.0,40.0
 2018-12-30,2018,17,12,Denver Broncos,Los Angeles Chargers,9.0,23.0,7.0,Loss,False,51.0,6.0,outdoors,,,,,False,False,47.0,36.0,20.0,11.0
 2018-12-30,2018,17,12,Washington Commanders,Philadelphia Eagles,0.0,24.0,6.0,Loss,False,46.0,3.0,outdoors,,,,,False,False,35.0,44.0,48.0,34.0
-2018-12-30,2018,17,12,Tennessee Titans,Indianapolis Colts,17.0,33.0,5.0,Loss,False,53.0,4.0,outdoors,,,,,False,False,33.0,48.0,42.0,40.0
 2019-09-15,2019,2,9,Miami Dolphins,New England Patriots,0.0,43.0,18.0,Loss,False,87.0,4.0,outdoors,,,,,False,False,37.0,45.0,75.0,20.0
 2019-09-15,2019,2,9,Washington Commanders,Dallas Cowboys,21.0,31.0,6.0,Loss,False,80.0,7.0,outdoors,,,,,False,False,35.0,46.0,51.0,35.0
 2019-09-15,2019,2,9,Oakland Raiders,Kansas City Chiefs,10.0,28.0,7.0,Loss,False,70.0,13.0,outdoors,,,,,False,False,33.0,49.0,57.0,30.0
@@ -106,8 +106,8 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2019-11-03,2019,9,11,Miami Dolphins,New York Jets,26.0,18.0,3.5,Cover,True,85.0,11.0,outdoors,,,,,False,False,37.0,51.0,29.0,58.0
 2019-11-04,2019,9,11,New York Giants,Dallas Cowboys,18.0,37.0,6.5,Loss,False,51.0,10.0,outdoors,,,,,False,False,33.0,56.0,54.0,38.0
 2019-11-10,2019,10,11,Cincinnati Bengals,Baltimore Ravens,13.0,49.0,10.5,Loss,False,56.0,9.0,outdoors,,,,,False,False,41.0,47.0,49.0,42.0
-2019-11-17,2019,11,11,Miami Dolphins,Buffalo Bills,20.0,37.0,7.0,Loss,False,62.0,13.0,outdoors,,,,,False,False,39.0,51.0,45.0,45.0
 2019-11-17,2019,11,11,Tampa Bay Buccaneers,New Orleans Saints,17.0,34.0,5.0,Loss,False,55.0,4.0,outdoors,,,,,False,False,30.0,59.0,54.0,39.0
+2019-11-17,2019,11,11,Miami Dolphins,Buffalo Bills,20.0,37.0,7.0,Loss,False,62.0,13.0,outdoors,,,,,False,False,39.0,51.0,45.0,45.0
 2019-11-18,2019,11,11,Los Angeles Chargers,Kansas City Chiefs,17.0,24.0,5.5,Loss,False,67.0,7.0,outdoors,,,,,False,False,26.0,18.0,62.0,34.0
 2019-11-24,2019,12,11,Cincinnati Bengals,Pittsburgh Steelers,10.0,16.0,5.5,Loss,False,46.0,10.0,outdoors,,,,,False,False,41.0,49.0,62.0,34.0
 2019-11-28,2019,13,11,Detroit Lions,Chicago Bears,20.0,24.0,5.5,Cover,True,,,dome,,,,,False,False,45.0,47.0,36.0,56.0
@@ -115,25 +115,25 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2019-12-01,2019,13,12,Denver Broncos,Los Angeles Chargers,23.0,20.0,4.5,Cover,True,33.0,7.0,outdoors,,,,,False,False,50.0,45.0,26.0,19.0
 2019-12-15,2019,15,12,Washington Commanders,Philadelphia Eagles,27.0,37.0,7.0,Loss,False,52.0,13.0,outdoors,,,,,False,False,38.0,55.0,56.0,42.0
 2019-12-22,2019,16,12,Cleveland Browns,Baltimore Ravens,15.0,31.0,9.5,Loss,False,49.0,10.0,outdoors,,,,,False,False,24.0,69.0,55.0,42.0
-2019-12-29,2019,17,12,Seattle Seahawks,San Francisco 49ers,21.0,26.0,3.5,Loss,False,51.0,3.0,outdoors,,,,,False,False,66.0,36.0,37.0,58.0
-2019-12-29,2019,17,12,New York Giants,Philadelphia Eagles,17.0,34.0,4.0,Loss,False,42.0,5.0,outdoors,,,,,False,False,35.0,61.0,58.0,42.0
-2019-12-29,2019,17,12,Jacksonville Jaguars,Indianapolis Colts,38.0,20.0,5.0,Cover,True,,,outdoors,,,,,False,False,33.0,65.0,51.0,49.0
-2019-12-29,2019,17,12,Houston Texans,Tennessee Titans,14.0,35.0,10.0,Loss,False,,,closed,,,,,False,False,53.0,46.0,41.0,56.0
-2019-12-29,2019,17,12,Minnesota Vikings,Chicago Bears,19.0,21.0,5.5,Cover,True,,,dome,,,,,False,False,58.0,39.0,38.0,58.0
-2019-12-29,2019,17,12,Detroit Lions,Green Bay Packers,20.0,23.0,13.5,Cover,True,,,dome,,,,,False,False,45.0,51.0,61.0,40.0
 2019-12-29,2019,17,12,Carolina Panthers,New Orleans Saints,10.0,42.0,13.5,Loss,False,63.0,9.0,outdoors,,,,,False,False,54.0,46.0,59.0,40.0
+2019-12-29,2019,17,12,Detroit Lions,Green Bay Packers,20.0,23.0,13.5,Cover,True,,,dome,,,,,False,False,45.0,51.0,61.0,40.0
+2019-12-29,2019,17,12,Minnesota Vikings,Chicago Bears,19.0,21.0,5.5,Cover,True,,,dome,,,,,False,False,58.0,39.0,38.0,58.0
+2019-12-29,2019,17,12,Houston Texans,Tennessee Titans,14.0,35.0,10.0,Loss,False,,,closed,,,,,False,False,53.0,46.0,41.0,56.0
+2019-12-29,2019,17,12,Jacksonville Jaguars,Indianapolis Colts,38.0,20.0,5.0,Cover,True,,,outdoors,,,,,False,False,33.0,65.0,51.0,49.0
+2019-12-29,2019,17,12,New York Giants,Philadelphia Eagles,17.0,34.0,4.0,Loss,False,42.0,5.0,outdoors,,,,,False,False,35.0,61.0,58.0,42.0
+2019-12-29,2019,17,12,Seattle Seahawks,San Francisco 49ers,21.0,26.0,3.5,Loss,False,51.0,3.0,outdoors,,,,,False,False,66.0,36.0,37.0,58.0
 2020-09-13,2020,1,9,Jacksonville Jaguars,Indianapolis Colts,27.0,20.0,7.0,Cover,True,80.0,3.0,outdoors,,,,,False,False,34.0,65.0,51.0,50.0
 2020-09-13,2020,1,9,Washington Commanders,Philadelphia Eagles,27.0,17.0,5.5,Cover,True,76.0,5.0,outdoors,,,,,False,False,38.0,58.0,59.0,43.0
-2020-09-20,2020,2,9,Miami Dolphins,Buffalo Bills,28.0,31.0,5.5,Cover,True,90.0,5.0,outdoors,,,,,False,False,42.0,56.0,50.0,49.0
 2020-09-20,2020,2,9,Los Angeles Chargers,Kansas City Chiefs,20.0,23.0,8.5,Cover,True,,,dome,,,,,False,False,28.0,23.0,72.0,34.0
-2020-10-25,2020,7,10,Cincinnati Bengals,Cleveland Browns,34.0,37.0,4.5,Cover,True,48.0,8.0,outdoors,,,,,False,False,44.0,57.0,28.0,73.0
-2020-10-25,2020,7,10,New York Jets,Buffalo Bills,10.0,18.0,9.5,Cover,True,52.0,8.0,outdoors,,,,,False,False,35.0,67.0,53.0,51.0
-2020-10-25,2020,7,10,Denver Broncos,Kansas City Chiefs,16.0,43.0,7.0,Loss,False,14.0,11.0,outdoors,,,,,False,False,56.0,49.0,76.0,35.0
+2020-09-20,2020,2,9,Miami Dolphins,Buffalo Bills,28.0,31.0,5.5,Cover,True,90.0,5.0,outdoors,,,,,False,False,42.0,56.0,50.0,49.0
 2020-10-25,2020,7,10,Arizona Cardinals,Seattle Seahawks,37.0,34.0,3.5,Cover,True,,,closed,,,,,False,False,52.0,51.0,72.0,38.0
+2020-10-25,2020,7,10,Denver Broncos,Kansas City Chiefs,16.0,43.0,7.0,Loss,False,14.0,11.0,outdoors,,,,,False,False,56.0,49.0,76.0,35.0
+2020-10-25,2020,7,10,New York Jets,Buffalo Bills,10.0,18.0,9.5,Cover,True,52.0,8.0,outdoors,,,,,False,False,35.0,67.0,53.0,51.0
+2020-10-25,2020,7,10,Cincinnati Bengals,Cleveland Browns,34.0,37.0,4.5,Cover,True,48.0,8.0,outdoors,,,,,False,False,44.0,57.0,28.0,73.0
 2020-11-08,2020,9,11,Jacksonville Jaguars,Houston Texans,25.0,27.0,7.0,Cover,True,79.0,14.0,outdoors,,,,,False,False,35.0,71.0,55.0,54.0
 2020-11-09,2020,9,11,New York Jets,New England Patriots,27.0,30.0,9.5,Cover,True,61.0,2.0,outdoors,,,,,False,False,35.0,69.0,88.0,30.0
-2020-11-15,2020,10,11,New York Giants,Philadelphia Eagles,27.0,17.0,4.5,Cover,True,56.0,18.0,outdoors,,,,,False,False,37.0,69.0,62.0,47.0
 2020-11-15,2020,10,11,Carolina Panthers,Tampa Bay Buccaneers,23.0,46.0,6.0,Loss,False,65.0,15.0,outdoors,,,,,False,False,57.0,53.0,40.0,65.0
+2020-11-15,2020,10,11,New York Giants,Philadelphia Eagles,27.0,17.0,4.5,Cover,True,56.0,18.0,outdoors,,,,,False,False,37.0,69.0,62.0,47.0
 2020-11-16,2020,10,11,Chicago Bears,Minnesota Vikings,13.0,19.0,3.5,Loss,False,44.0,11.0,outdoors,,,,,False,False,44.0,62.0,62.0,46.0
 2020-11-22,2020,11,11,Las Vegas Raiders,Kansas City Chiefs,31.0,35.0,7.5,Cover,True,,,dome,,,,,False,False,6.0,3.0,79.0,35.0
 2020-11-29,2020,12,11,New York Jets,Miami Dolphins,3.0,20.0,7.5,Loss,False,54.0,2.0,outdoors,,,,,False,False,35.0,71.0,48.0,59.0
@@ -147,10 +147,10 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2021-01-03,2020,17,1,San Francisco 49ers,Seattle Seahawks,23.0,26.0,7.0,Cover,True,,,closed,,,,,False,False,46.0,68.0,78.0,42.0
 2021-01-03,2020,17,1,Kansas City Chiefs,Los Angeles Chargers,21.0,38.0,7.0,Loss,False,35.0,6.0,outdoors,,,,,False,False,85.0,35.0,33.0,32.0
 2021-01-03,2020,17,1,Houston Texans,Tennessee Titans,38.0,41.0,7.0,Cover,True,,,closed,,,,,False,False,58.0,59.0,54.0,62.0
-2021-01-03,2020,17,1,Chicago Bears,Green Bay Packers,16.0,35.0,4.5,Loss,False,32.0,7.0,outdoors,,,,,False,False,47.0,65.0,75.0,44.0
+2021-01-03,2020,17,1,Buffalo Bills,Miami Dolphins,56.0,26.0,3.5,Cover,True,35.0,1.0,outdoors,,,,,False,False,61.0,52.0,52.0,60.0
 2021-01-03,2020,17,1,Carolina Panthers,New Orleans Saints,7.0,33.0,6.0,Loss,False,57.0,2.0,outdoors,,,,,False,False,59.0,57.0,71.0,45.0
 2021-01-03,2020,17,1,Cincinnati Bengals,Baltimore Ravens,3.0,38.0,13.5,Loss,False,39.0,10.0,outdoors,,,,,False,False,47.0,63.0,67.0,48.0
-2021-01-03,2020,17,1,Buffalo Bills,Miami Dolphins,56.0,26.0,3.5,Cover,True,35.0,1.0,outdoors,,,,,False,False,61.0,52.0,52.0,60.0
+2021-01-03,2020,17,1,Chicago Bears,Green Bay Packers,16.0,35.0,4.5,Loss,False,32.0,7.0,outdoors,,,,,False,False,47.0,65.0,75.0,44.0
 2021-09-12,2021,1,9,Houston Texans,Jacksonville Jaguars,37.0,21.0,3.5,Cover,True,,,closed,,,,,False,False,58.0,60.0,35.0,80.0
 2021-09-19,2021,2,9,Miami Dolphins,Buffalo Bills,0.0,35.0,3.5,Loss,False,89.0,7.0,outdoors,,,,,False,False,53.0,61.0,64.0,54.0
 2021-09-19,2021,2,9,New York Jets,New England Patriots,6.0,25.0,5.5,Loss,False,72.0,13.0,outdoors,,,,,False,False,37.0,76.0,93.0,35.0
@@ -161,10 +161,10 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2021-11-15,2021,10,11,San Francisco 49ers,Los Angeles Rams,31.0,10.0,3.5,Cover,True,59.0,0.0,outdoors,,,,,False,False,49.0,74.0,57.0,38.0
 2021-11-21,2021,11,11,New York Jets,Miami Dolphins,17.0,24.0,3.5,Loss,False,52.0,4.0,outdoors,,,,,False,False,39.0,82.0,55.0,68.0
 2021-11-28,2021,12,11,New York Giants,Philadelphia Eagles,13.0,7.0,4.0,Cover,True,39.0,4.0,outdoors,,,,,False,False,44.0,79.0,68.0,60.0
-2021-12-05,2021,13,12,Pittsburgh Steelers,Baltimore Ravens,20.0,19.0,4.0,Cover,True,50.0,7.0,outdoors,,,,,False,False,82.0,47.0,77.0,52.0
-2021-12-05,2021,13,12,Houston Texans,Indianapolis Colts,0.0,31.0,10.0,Loss,False,,,closed,,,,,False,False,60.0,69.0,68.0,62.0
 2021-12-05,2021,13,12,Atlanta Falcons,Tampa Bay Buccaneers,17.0,30.0,11.0,Loss,False,,,closed,,,,,False,False,61.0,67.0,57.0,70.0
 2021-12-05,2021,13,12,Detroit Lions,Minnesota Vikings,29.0,27.0,7.0,Cover,True,,,dome,,,,,False,False,50.0,73.0,71.0,56.0
+2021-12-05,2021,13,12,Houston Texans,Indianapolis Colts,0.0,31.0,10.0,Loss,False,,,closed,,,,,False,False,60.0,69.0,68.0,62.0
+2021-12-05,2021,13,12,Pittsburgh Steelers,Baltimore Ravens,20.0,19.0,4.0,Cover,True,50.0,7.0,outdoors,,,,,False,False,82.0,47.0,77.0,52.0
 2021-12-12,2021,14,12,Washington Commanders,Dallas Cowboys,20.0,27.0,6.5,Loss,False,48.0,17.0,outdoors,,,,,False,False,51.0,74.0,72.0,57.0
 2021-12-19,2021,15,12,New York Giants,Dallas Cowboys,6.0,21.0,11.5,Loss,False,37.0,8.0,outdoors,,,,,False,False,45.0,81.0,73.0,57.0
 2021-12-20,2021,15,12,Chicago Bears,Minnesota Vikings,9.0,17.0,7.0,Loss,False,37.0,8.0,outdoors,,,,,False,False,51.0,76.0,72.0,57.0
@@ -172,13 +172,13 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2022-01-02,2021,17,1,Washington Commanders,Philadelphia Eagles,16.0,20.0,6.5,Cover,True,62.0,4.0,outdoors,,,,,False,False,51.0,77.0,71.0,61.0
 2022-01-08,2021,18,1,Denver Broncos,Kansas City Chiefs,24.0,28.0,11.5,Cover,True,41.0,4.0,outdoors,,,,,False,False,66.0,66.0,98.0,42.0
 2022-01-08,2021,18,1,Philadelphia Eagles,Dallas Cowboys,26.0,51.0,6.5,Loss,False,31.0,8.0,outdoors,,,,,False,False,72.0,61.0,75.0,58.0
-2022-01-09,2021,18,1,Atlanta Falcons,New Orleans Saints,20.0,30.0,4.5,Loss,False,,,closed,,,,,False,False,63.0,70.0,81.0,54.0
-2022-01-09,2021,18,1,Miami Dolphins,New England Patriots,33.0,24.0,6.0,Cover,True,75.0,8.0,outdoors,,,,,False,False,60.0,69.0,103.0,40.0
-2022-01-09,2021,18,1,New York Giants,Washington Commanders,7.0,22.0,6.0,Loss,False,38.0,0.0,outdoors,,,,,False,False,45.0,84.0,51.0,78.0
 2022-01-09,2021,18,1,Las Vegas Raiders,Los Angeles Chargers,35.0,32.0,3.5,Cover,True,,,dome,,,,,False,False,17.0,15.0,43.0,39.0
+2022-01-09,2021,18,1,Atlanta Falcons,New Orleans Saints,20.0,30.0,4.5,Loss,False,,,closed,,,,,False,False,63.0,70.0,81.0,54.0
+2022-01-09,2021,18,1,New York Giants,Washington Commanders,7.0,22.0,6.0,Loss,False,38.0,0.0,outdoors,,,,,False,False,45.0,84.0,51.0,78.0
+2022-01-09,2021,18,1,Miami Dolphins,New England Patriots,33.0,24.0,6.0,Cover,True,75.0,8.0,outdoors,,,,,False,False,60.0,69.0,103.0,40.0
 2022-01-09,2021,18,1,Houston Texans,Tennessee Titans,25.0,28.0,10.5,Cover,True,,,closed,,,,,False,False,62.0,72.0,66.0,68.0
-2022-01-09,2021,18,1,Detroit Lions,Green Bay Packers,37.0,30.0,4.0,Cover,True,,,dome,,,,,False,False,52.0,76.0,90.0,48.0
 2022-01-09,2021,18,1,Jacksonville Jaguars,Indianapolis Colts,26.0,11.0,14.0,Cover,True,76.0,19.0,outdoors,,,,,False,False,37.0,94.0,71.0,63.0
+2022-01-09,2021,18,1,Detroit Lions,Green Bay Packers,37.0,30.0,4.0,Cover,True,,,dome,,,,,False,False,52.0,76.0,90.0,48.0
 2022-09-11,2022,1,9,Atlanta Falcons,New Orleans Saints,26.0,27.0,6.0,Cover,True,,,closed,,,,,False,False,63.0,71.0,82.0,54.0
 2022-09-11,2022,1,9,Houston Texans,Indianapolis Colts,20.0,20.0,7.0,Cover,True,,,closed,,,,,False,False,62.0,73.0,71.0,64.0
 2022-09-25,2022,3,9,Miami Dolphins,Buffalo Bills,21.0,19.0,4.0,Cover,True,,,outdoors,,,,,False,False,63.0,69.0,78.0,60.0
@@ -191,10 +191,10 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2022-11-20,2022,11,11,Los Angeles Chargers,Kansas City Chiefs,27.0,30.0,5.5,Cover,True,,,dome,,,,,False,False,48.0,44.0,108.0,45.0
 2022-11-21,2022,11,11,Arizona Cardinals,San Francisco 49ers,10.0,38.0,10.0,Loss,False,,,outdoors,,,,,False,False,71.0,70.0,63.0,81.0
 2022-12-01,2022,13,12,New England Patriots,Buffalo Bills,10.0,24.0,3.5,Loss,False,35.0,2.0,outdoors,,,,,False,False,109.0,47.0,84.0,63.0
-2022-12-04,2022,13,12,Chicago Bears,Green Bay Packers,19.0,28.0,4.0,Loss,False,38.0,12.0,outdoors,,,,,False,False,56.0,87.0,94.0,58.0
 2022-12-04,2022,13,12,Los Angeles Rams,Seattle Seahawks,23.0,27.0,7.0,Cover,True,,,dome,,,,,False,False,69.0,49.0,92.0,58.0
-2022-12-11,2022,14,12,New York Giants,Philadelphia Eagles,22.0,48.0,7.5,Loss,False,37.0,6.0,outdoors,,,,,False,False,52.0,89.0,83.0,64.0
+2022-12-04,2022,13,12,Chicago Bears,Green Bay Packers,19.0,28.0,4.0,Loss,False,38.0,12.0,outdoors,,,,,False,False,56.0,87.0,94.0,58.0
 2022-12-11,2022,14,12,Denver Broncos,Kansas City Chiefs,28.0,34.0,8.5,Cover,True,55.0,4.0,outdoors,,,,,False,False,69.0,76.0,110.0,46.0
+2022-12-11,2022,14,12,New York Giants,Philadelphia Eagles,22.0,48.0,7.5,Loss,False,37.0,6.0,outdoors,,,,,False,False,52.0,89.0,83.0,64.0
 2023-01-01,2022,17,1,Houston Texans,Jacksonville Jaguars,3.0,31.0,3.5,Loss,False,,,closed,,,,,False,False,64.0,85.0,45.0,102.0
 2023-01-07,2022,18,1,Las Vegas Raiders,Kansas City Chiefs,13.0,31.0,9.0,Loss,False,,,dome,,,,,False,False,24.0,26.0,114.0,46.0
 2023-01-08,2022,18,1,Chicago Bears,Minnesota Vikings,13.0,29.0,6.5,Loss,False,32.0,2.0,outdoors,,,,,False,False,56.0,91.0,86.0,63.0
@@ -221,11 +221,11 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2024-10-13,2024,6,10,New Orleans Saints,Tampa Bay Buccaneers,27.0,51.0,3.5,Loss,False,,,dome,,,,,False,False,100.0,75.0,84.0,93.0
 2024-10-13,2024,6,10,Carolina Panthers,Atlanta Falcons,20.0,38.0,6.0,Loss,False,79.0,9.0,outdoors,,,,,False,False,74.0,99.0,80.0,93.0
 2024-10-20,2024,7,10,Cleveland Browns,Cincinnati Bengals,14.0,21.0,5.5,Loss,False,62.0,8.0,outdoors,,,,,False,False,63.0,108.0,85.0,89.0
-2024-10-27,2024,8,10,Las Vegas Raiders,Kansas City Chiefs,20.0,27.0,9.0,Cover,True,,,dome,,,,,False,False,34.0,41.0,139.0,52.0
-2024-10-27,2024,8,10,New England Patriots,New York Jets,25.0,22.0,7.0,Cover,True,53.0,8.0,outdoors,,,,,False,False,116.0,70.0,57.0,113.0
 2024-10-27,2024,8,10,Cleveland Browns,Baltimore Ravens,29.0,24.0,7.5,Cover,True,52.0,4.0,outdoors,,,,,False,False,63.0,109.0,106.0,73.0
-2024-11-03,2024,9,11,Carolina Panthers,New Orleans Saints,23.0,22.0,7.0,Cover,True,66.0,7.0,outdoors,,,,,False,False,74.0,102.0,100.0,78.0
+2024-10-27,2024,8,10,New England Patriots,New York Jets,25.0,22.0,7.0,Cover,True,53.0,8.0,outdoors,,,,,False,False,116.0,70.0,57.0,113.0
+2024-10-27,2024,8,10,Las Vegas Raiders,Kansas City Chiefs,20.0,27.0,9.0,Cover,True,,,dome,,,,,False,False,34.0,41.0,139.0,52.0
 2024-11-03,2024,9,11,New York Giants,Washington Commanders,22.0,27.0,4.5,Loss,False,52.0,6.0,outdoors,,,,,False,False,63.0,110.0,70.0,101.0
+2024-11-03,2024,9,11,Carolina Panthers,New Orleans Saints,23.0,22.0,7.0,Cover,True,66.0,7.0,outdoors,,,,,False,False,74.0,102.0,100.0,78.0
 2024-11-10,2024,10,11,New Orleans Saints,Atlanta Falcons,20.0,17.0,3.5,Cover,True,,,dome,,,,,False,False,100.0,79.0,83.0,94.0
 2024-11-10,2024,10,11,Dallas Cowboys,Philadelphia Eagles,6.0,34.0,7.5,Loss,False,,,closed,,,,,False,False,104.0,76.0,105.0,76.0
 2024-11-17,2024,11,11,Chicago Bears,Green Bay Packers,19.0,20.0,6.0,Cover,True,54.0,5.0,outdoors,,,,,False,False,67.0,107.0,114.0,71.0
@@ -238,3 +238,24 @@ game_date,season,week,month,home_team_normalized,away_team_normalized,home_score
 2025-01-05,2024,18,1,Dallas Cowboys,Washington Commanders,19.0,23.0,7.0,Cover,True,,,closed,,,,,False,False,108.0,80.0,75.0,104.0
 2025-01-05,2024,18,1,Los Angeles Rams,Seattle Seahawks,25.0,30.0,7.5,Cover,True,,,dome,,,,,False,False,91.0,67.0,113.0,77.0
 2025-01-05,2024,18,1,Las Vegas Raiders,Los Angeles Chargers,20.0,34.0,7.0,Loss,False,,,dome,,,,,False,False,36.0,48.0,68.0,66.0
+2025-09-07,2025,1,9,Cleveland Browns,Cincinnati Bengals,16.0,17.0,5.5,Cover,True,63.0,10.0,outdoors,,,,,False,False,65.0,117.0,92.0,93.0
+2025-09-14,2025,2,9,New York Jets,Buffalo Bills,10.0,30.0,6.0,Loss,False,80.0,3.0,outdoors,,,,,False,False,60.0,121.0,118.0,76.0
+2025-09-15,2025,2,9,Las Vegas Raiders,Los Angeles Chargers,9.0,20.0,3.5,Loss,False,,,dome,,,,,False,False,37.0,49.0,70.0,67.0
+2025-09-21,2025,3,9,Carolina Panthers,Atlanta Falcons,30.0,0.0,5.5,Cover,True,83.0,5.0,outdoors,,,,,False,False,78.0,109.0,86.0,101.0
+2025-09-21,2025,3,9,Tennessee Titans,Indianapolis Colts,20.0,41.0,6.0,Loss,False,84.0,8.0,outdoors,,,,,False,False,83.0,106.0,94.0,93.0
+2025-10-09,2025,6,10,New York Giants,Philadelphia Eagles,34.0,17.0,7.0,Cover,True,53.0,3.0,outdoors,,,,,False,False,65.0,122.0,121.0,78.0
+2025-10-16,2025,7,10,Cincinnati Bengals,Pittsburgh Steelers,33.0,31.0,5.5,Cover,True,60.0,5.0,outdoors,,,,,False,False,94.0,97.0,119.0,75.0
+2025-10-26,2025,8,10,New Orleans Saints,Tampa Bay Buccaneers,3.0,23.0,4.5,Loss,False,,,dome,,,,,False,False,104.0,90.0,96.0,101.0
+2025-11-09,2025,10,11,Miami Dolphins,Buffalo Bills,30.0,13.0,8.5,Cover,True,84.0,6.0,outdoors,,,,,False,False,91.0,101.0,123.0,78.0
+2025-11-09,2025,10,11,San Francisco 49ers,Los Angeles Rams,26.0,42.0,5.5,Loss,False,77.0,3.0,outdoors,,,,,False,False,99.0,102.0,98.0,71.0
+2025-11-16,2025,11,11,Tennessee Titans,Houston Texans,13.0,16.0,5.5,Cover,True,64.0,8.0,outdoors,,,,,False,False,84.0,112.0,91.0,107.0
+2025-11-16,2025,11,11,Arizona Cardinals,San Francisco 49ers,22.0,41.0,3.5,Loss,False,,,closed,,,,,False,False,86.0,105.0,99.0,103.0
+2025-11-16,2025,11,11,Cleveland Browns,Baltimore Ravens,16.0,23.0,7.5,Cover,True,44.0,20.0,outdoors,,,,,False,False,67.0,124.0,118.0,82.0
+2025-11-16,2025,11,11,Denver Broncos,Kansas City Chiefs,22.0,19.0,3.5,Cover,True,70.0,6.0,outdoors,,,,,False,False,97.0,98.0,155.0,59.0
+2025-11-30,2025,13,11,Tennessee Titans,Jacksonville Jaguars,3.0,25.0,6.0,Loss,False,38.0,7.0,outdoors,,,,,False,False,84.0,114.0,68.0,128.0
+2025-12-07,2025,14,12,Arizona Cardinals,Los Angeles Rams,17.0,45.0,9.5,Loss,False,,,closed,,,,,False,False,86.0,108.0,101.0,72.0
+2025-12-07,2025,14,12,Las Vegas Raiders,Denver Broncos,17.0,24.0,8.5,Cover,True,,,dome,,,,,False,False,38.0,59.0,99.0,98.0
+2025-12-20,2025,16,12,Washington Commanders,Philadelphia Eagles,18.0,29.0,7.0,Loss,False,42.0,7.0,outdoors,,,,,False,False,82.0,115.0,126.0,82.0
+2025-12-25,2025,17,12,Minnesota Vikings,Detroit Lions,23.0,10.0,7.0,Cover,True,,,dome,,,,,False,False,115.0,86.0,99.0,100.0
+2025-12-25,2025,17,12,Washington Commanders,Dallas Cowboys,23.0,30.0,8.5,Cover,True,50.0,7.0,outdoors,,,,,False,False,82.0,116.0,114.0,89.0
+2025-12-25,2025,17,12,Kansas City Chiefs,Denver Broncos,13.0,20.0,13.5,Cover,True,,,outdoors,,,,,False,False,156.0,64.0,101.0,99.0

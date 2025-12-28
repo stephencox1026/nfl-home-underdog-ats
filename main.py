@@ -11,6 +11,7 @@ import playoff_calculator
 import analyzer
 import report_generator
 import config
+import enrich_qb_coach
 
 logging.basicConfig(
     level=logging.INFO,
@@ -47,11 +48,15 @@ def main():
         logger.info(f"Collected {len(df)} total games")
         
         # Step 2: Calculate playoff status
-        logger.info("\n[Step 2/4] Calculating playoff elimination status...")
+        logger.info("\n[Step 2/5] Calculating playoff elimination status...")
         df = playoff_calculator.add_playoff_status_to_games(df)
         
+        # Step 2.5: Enrich with QB and coach data (only adds missing data, doesn't modify existing)
+        logger.info("\n[Step 2.5/5] Enriching QB and coach data...")
+        df = enrich_qb_coach.enrich_all_additional_data(df)
+        
         # Step 3: Analyze games
-        logger.info("\n[Step 3/4] Analyzing qualifying games...")
+        logger.info("\n[Step 3/5] Analyzing qualifying games...")
         filtered_df, stats = analyzer.analyze_games(df)
         
         if len(filtered_df) == 0:
@@ -64,7 +69,7 @@ def main():
         logger.info(f"Home team ATS win rate: {stats.get('home_ats_win_rate', 0.0):.2f}%")
         
         # Step 4: Generate reports
-        logger.info("\n[Step 4/4] Generating reports...")
+        logger.info("\n[Step 4/5] Generating reports...")
         report_generator.generate_all_reports(filtered_df, stats)
         
         logger.info("\n" + "=" * 60)

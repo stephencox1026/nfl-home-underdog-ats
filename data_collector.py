@@ -397,7 +397,7 @@ def collect_all_data() -> pd.DataFrame:
     # Filter to relevant seasons
     df = enrich_game_data(df)
     
-    # Filter to specified seasons (or use available data if requested range not available)
+    # Filter to specified seasons (preserves all data within the range)
     if 'season' in df.columns:
         original_count = len(df)
         available_seasons = sorted(df['season'].dropna().unique())

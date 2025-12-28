@@ -245,8 +245,8 @@ class ExecutiveNFLGUI:
         season_container = tk.Frame(parent, bg=self.colors['bg'])
         season_container.pack(fill=tk.X, pady=(0, 16), padx=48)  # Reduced from 24 to 16
         
-        # Add ad box for 2024 season
-        if season == 2024:
+        # Add ad box for 2025 season
+        if season == 2025:
             ad_frame = tk.Frame(season_container, bg=self.colors['card_bg'], 
                                relief=tk.SOLID, bd=1,
                                highlightbackground=self.colors['card_border'],
@@ -439,8 +439,14 @@ class ExecutiveNFLGUI:
         table_frame = tk.Frame(table_container, bg=self.colors['card_bg'])
         table_frame.pack(fill=tk.BOTH, padx=20, pady=(0, 20), expand=True)
         
-        # Treeview - no height limit, no scrolling
-        columns = ('visiting_team', 'home_team', 'spread', 'final_score', 'ats_result', 'home_cover')
+        # Check if coach/QB data is available in the data
+        # We'll determine this when populating, but set up columns now
+        columns = ('date', 'week', 'visiting_team', 'home_team', 'spread', 'final_score', 'ats_result', 'home_cover')
+        
+        # Check if we should add coach/QB columns (will be determined during population)
+        self.has_coach_data = False
+        self.has_qb_data = False
+        
         tree = ttk.Treeview(
             table_frame,
             columns=columns,
@@ -450,12 +456,14 @@ class ExecutiveNFLGUI:
         
         # Column configuration with better widths
         column_configs = {
-            'visiting_team': ('Visiting Team', 160),
-            'home_team': ('Home Team', 160),
-            'spread': ('Spread', 90),
-            'final_score': ('Final Score', 130),
-            'ats_result': ('ATS Result', 110),
-            'home_cover': ('Cover', 80)
+            'date': ('Date', 100),
+            'week': ('Week', 60),
+            'visiting_team': ('Visiting Team', 140),
+            'home_team': ('Home Team', 140),
+            'spread': ('Spread', 80),
+            'final_score': ('Final Score', 120),
+            'ats_result': ('ATS Result', 100),
+            'home_cover': ('Cover', 70)
         }
         
         for col, (heading, width) in column_configs.items():
@@ -523,8 +531,12 @@ class ExecutiveNFLGUI:
             # Create games table (but don't show it yet)
             tree = self.create_games_table(games_container, season)
             
+            # Check if coach/QB data is available for this season
+            has_coach = 'home_coach' in season_data.columns and season_data['home_coach'].notna().any()
+            has_qb = 'home_qb' in season_data.columns and season_data['home_qb'].notna().any()
+            
             # Populate games table
-            self.populate_games_table(tree, season_data)
+            self.populate_games_table(tree, season_data, has_coach=has_coach, has_qb=has_qb)
             
             # Store references
             self.games_containers[season] = games_container
@@ -562,7 +574,7 @@ class ExecutiveNFLGUI:
         self.canvas.update_idletasks()
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
     
-    def populate_games_table(self, tree, season_data):
+    def populate_games_table(self, tree, season_data, has_coach=False, has_qb=False):
         """Populate games table with season data."""
         # Clear existing items
         for item in tree.get_children():
@@ -571,12 +583,50 @@ class ExecutiveNFLGUI:
         if season_data is None or len(season_data) == 0:
             return
         
+        # Add coach/QB columns if data is available
+        if has_coach or has_qb:
+            current_columns = list(tree['columns'])
+            if has_coach and 'home_coach' not in current_columns:
+                tree['columns'] = current_columns + ['home_coach', 'away_coach']
+                tree.heading('home_coach', text='Home Coach', anchor=tk.CENTER)
+                tree.heading('away_coach', text='Away Coach', anchor=tk.CENTER)
+                tree.column('home_coach', width=120, anchor=tk.CENTER, minwidth=100)
+                tree.column('away_coach', width=120, anchor=tk.CENTER, minwidth=100)
+            if has_qb and 'home_qb' not in current_columns:
+                current_columns = list(tree['columns'])
+                tree['columns'] = current_columns + ['home_qb', 'away_qb']
+                tree.heading('home_qb', text='Home QB', anchor=tk.CENTER)
+                tree.heading('away_qb', text='Away QB', anchor=tk.CENTER)
+                tree.column('home_qb', width=120, anchor=tk.CENTER, minwidth=100)
+                tree.column('away_qb', width=120, anchor=tk.CENTER, minwidth=100)
+        
         # Sort by date
         season_data = season_data.sort_values('game_date')
         
         # Add rows with alternating background colors for readability
         row_num = 0
         for idx, row in season_data.iterrows():
+            # Date
+            game_date = row.get('game_date', None)
+            if pd.notna(game_date):
+                try:
+                    if isinstance(game_date, str):
+                        date_obj = pd.to_datetime(game_date)
+                    else:
+                        date_obj = game_date
+                    date_str = date_obj.strftime('%m/%d/%Y')
+                except:
+                    date_str = str(game_date)[:10] if len(str(game_date)) > 10 else str(game_date)
+            else:
+                date_str = "N/A"
+            
+            # Week
+            week = row.get('week', None)
+            if pd.notna(week):
+                week_str = str(int(week))
+            else:
+                week_str = "N/A"
+            
             # Visiting team (away team)
             visiting_team = str(row.get('away_team_normalized', ''))
             
@@ -605,15 +655,31 @@ class ExecutiveNFLGUI:
             home_covered = bool(row.get('home_covered', False)) if pd.notna(row.get('home_covered', False)) else False
             home_cover_text = "Yes" if home_covered else "No"
             
-            # Insert row
-            item = tree.insert('', tk.END, values=(
+            # Build values list
+            values = [
+                date_str,
+                week_str,
                 visiting_team,
                 home_team,
                 spread,
                 final_score,
                 ats_result,
                 home_cover_text
-            ))
+            ]
+            
+            # Add coach/QB if available
+            if has_coach:
+                home_coach = str(row.get('home_coach', '')) if pd.notna(row.get('home_coach', None)) else 'N/A'
+                away_coach = str(row.get('away_coach', '')) if pd.notna(row.get('away_coach', None)) else 'N/A'
+                values.extend([home_coach, away_coach])
+            
+            if has_qb:
+                home_qb = str(row.get('home_qb', '')) if pd.notna(row.get('home_qb', None)) else 'N/A'
+                away_qb = str(row.get('away_qb', '')) if pd.notna(row.get('away_qb', None)) else 'N/A'
+                values.extend([home_qb, away_qb])
+            
+            # Insert row
+            item = tree.insert('', tk.END, values=tuple(values))
             
             # Alternating row colors for better readability
             tags = []

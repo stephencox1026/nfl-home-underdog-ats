@@ -4,7 +4,7 @@ Configuration file for NFL Home Underdog Divisional ATS Analysis
 
 # Analysis parameters
 START_SEASON = 2014
-END_SEASON = 2024
+END_SEASON = 2025
 SPREAD_THRESHOLD = 3.5  # Home team must be underdog by at least this many points
 
 # Data sources
