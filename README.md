@@ -2,6 +2,12 @@
 
 # NFL Home Underdog Divisional Game ATS Analysis
 
+## Live report
+
+[![NFL home-underdog ATS report](assets/preview.png)](https://stephencox1026.github.io/nfl-home-underdog-ats/outputs/analysis_report.html)
+
+**[Open the live analysis report](https://stephencox1026.github.io/nfl-home-underdog-ats/outputs/analysis_report.html)**
+
 ## Sample outputs
 
 ![ATS cover rate by month](outputs/monthly_breakdown.png)
