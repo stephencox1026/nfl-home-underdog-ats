@@ -2,29 +2,49 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
 .Python
-env/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
 venv/
-ENV/
-.venv
+env/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# Secrets / config
+.env
+.env.*
+!.env.example
+*.key
+*credentials*
+*secret*
 
-# OS
-.DS_Store
-Thumbs.db
+# Data & model artifacts (keep repos light; use LFS or external storage)
+*.pkl
+*.joblib
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+data/raw/
+data/processed/
+data/cache/
+cache/
 
-# Project specific
+# Logs
 *.log
-*.tmp
+logs/
 
-# Keep outputs but ignore large files if needed
-# outputs/*.png
-# outputs/*.html
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
 
+# Binaries that should never be committed
+ngrok
+ngrok.zip
+*.dylib
+*.so
