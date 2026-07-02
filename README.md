@@ -2,6 +2,11 @@
 
 # NFL Home Underdog Divisional Game ATS Analysis
 
+## Sample outputs
+
+![ATS cover rate by month](outputs/monthly_breakdown.png)
+![ATS cover rate by week](outputs/weekly_breakdown.png)
+
 This project analyzes NFL divisional games from 2014-2024 where the home team was an underdog by 3.5+ points to determine if there is betting value in consistently betting on these teams against the spread (ATS).
 
 ## Features
