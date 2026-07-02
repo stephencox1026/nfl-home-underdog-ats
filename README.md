@@ -1,3 +1,5 @@
+> **Decade-long strategy backtest** that quantifies edge with automated reporting — the same method used to evaluate a strategy's profitability before committing budget.
+
 # NFL Home Underdog Divisional Game ATS Analysis
 
 This project analyzes NFL divisional games from 2014-2024 where the home team was an underdog by 3.5+ points to determine if there is betting value in consistently betting on these teams against the spread (ATS).
